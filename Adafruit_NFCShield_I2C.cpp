@@ -149,35 +149,6 @@ void Adafruit_NFCShield_I2C::PrintHex(const byte * data, const uint32_t numBytes
 
 /**************************************************************************/
 /*! 
-    @brief  Prints a hexadecimal value in plain characters, along with
-            the char equivalents in the following format
-
-            00 00 00 00 00 00  ......
-
-    @param  data      Pointer to the byte data
-    @param  numBytes  Data length in bytes
-*/
-/**************************************************************************/
-void Adafruit_NFCShield_I2C::PrintHexChar(const byte * data, const uint32_t numBytes)
-{
-  uint32_t szPos;
-  for (szPos=0; szPos < numBytes; szPos++) 
-  {
-    // Append leading 0 for small values
-    if (data[szPos] <= 0xF)
-    if ((numBytes > 1) && (szPos != numBytes - 1))
-    {
-    }
-  }
-  for (szPos=0; szPos < numBytes; szPos++) 
-  {
-    if (data[szPos] <= 0x1F)
-    else
-  }
-}
- 
-/**************************************************************************/
-/*! 
     @brief  Checks the firmware version of the PN5xx chip
 
     @returns  The chip's firmware version and ID
